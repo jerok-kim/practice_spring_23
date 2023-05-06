@@ -1,0 +1,40 @@
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+      # in query ?? ??
+      default_batch_fetch_size: 100
+    # db session controller?? ????
+    open-in-view: true
+  # 404 ???? ?
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  # hibernateLazyInitializer ?? ???
+  # jackson:
+  #   serialization:
+  #     fail-on-empty-beans: false
+
+logging:
+  level:
+    '[kim.jerok.practice_spring_23]': debug  # debug ???? ?? ??? ? ?? ????
+    '[org.hibernate.type]': trace  # ?? ??? ? ? ??? ? ??
