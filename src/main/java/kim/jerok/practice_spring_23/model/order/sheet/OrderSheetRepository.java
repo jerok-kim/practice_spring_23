@@ -1,4 +1,13 @@
 package kim.jerok.practice_spring_23.model.order.sheet;
 
-public interface OrderSheetRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface OrderSheetRepository extends JpaRepository<OrderSheet, Long> {
+    // 내가 주문한 목록보기
+    @Query("select os from OrderSheet os where os.user.id = :userId")
+    List<OrderSheet> findByUserId(@Param("userId") Long userId);
 }
