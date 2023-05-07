@@ -1,4 +1,6 @@
 package kim.jerok.practice_spring_23.model.log.login;
 
-public interface LoginLogRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LoginLogRepository extends JpaRepository<LoginLog, Long> {
 }
