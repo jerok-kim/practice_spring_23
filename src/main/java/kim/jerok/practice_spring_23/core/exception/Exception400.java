@@ -5,6 +5,8 @@ import kim.jerok.practice_spring_23.dto.ValidDTO;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+// username = ajsdkfljweoiquigwqigjksajgksaj
+// "username" : "username의 길이가 너무 깁니다"
 // 유효성 검사 실패, 잘못된 파라메터 요청
 @Getter
 public class Exception400 extends RuntimeException {
