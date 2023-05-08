@@ -42,6 +42,7 @@ public class MyExceptionAdvice {
         return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
     }
 
+    // 나머지 모든 예외는 이 친구에게 다 걸러진다
     @MyErrorLogRecord
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> unknownServerError(Exception e) {
