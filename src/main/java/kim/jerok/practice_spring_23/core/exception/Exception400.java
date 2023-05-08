@@ -1,7 +1,9 @@
 package kim.jerok.practice_spring_23.core.exception;
 
 import kim.jerok.practice_spring_23.dto.ResponseDTO;
+import kim.jerok.practice_spring_23.dto.ValidDTO;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 // 유효성 검사 실패, 잘못된 파라메터 요청
 @Getter
@@ -15,9 +17,16 @@ public class Exception400 extends RuntimeException {
         this.key = key;
         this.value = value;
     }
-    
+
     public ResponseDTO<?> body() {
-        ResponseDTO<ValidDto> responseDTO
+        ResponseDTO<ValidDTO> responseDTO = new ResponseDTO<>();
+        ValidDTO validDTO = new ValidDTO(key, value);
+        responseDTO.fail(HttpStatus.BAD_REQUEST, "badRequest", validDTO);
+        return responseDTO;
+    }
+
+    public HttpStatus status() {
+        return HttpStatus.BAD_REQUEST;
     }
 
 }

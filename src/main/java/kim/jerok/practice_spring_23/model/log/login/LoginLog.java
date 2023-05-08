@@ -34,12 +34,11 @@ public class LoginLog {
     }
 
     @Builder
-    public LoginLog(Long id, Long userId, String userAgent, String clientIP, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public LoginLog(Long id, Long userId, String userAgent, String clientIP, LocalDateTime createdAt) {
         this.id = id;
         this.userId = userId;
         this.userAgent = userAgent;
         this.clientIP = clientIP;
         this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 }

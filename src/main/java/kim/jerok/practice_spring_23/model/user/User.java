@@ -1,7 +1,6 @@
 package kim.jerok.practice_spring_23.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import kim.jerok.practice_spring_23.core.exception.Exception400;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
