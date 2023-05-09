@@ -19,22 +19,16 @@ spring:
     properties:
       hibernate:
         format_sql: true
-      # in query ?? ??
       default_batch_fetch_size: 100
-    # db session controller?? ????
     open-in-view: true
-  # 404 ???? ?
+
   mvc:
     throw-exception-if-no-handler-found: true
   web:
     resources:
       add-mappings: false
-  # hibernateLazyInitializer ?? ???
-  # jackson:
-  #   serialization:
-  #     fail-on-empty-beans: false
 
 logging:
   level:
-    '[kim.jerok.practice_spring_23]': debug  # debug ???? ?? ??? ? ?? ????
-    '[org.hibernate.type]': trace  # ?? ??? ? ? ??? ? ??
+    '[kim.jerok.practice_spring_23]': debug
+    '[org.hibernate.type]': trace
